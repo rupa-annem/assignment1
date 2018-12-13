@@ -28,9 +28,18 @@ function Student(name)
            c.push(avg);
            names.push(stu[i].name);
            }
-names.sort(function(a,b){return(a-b);});
+names.sort();
 p.sort(function(a,b){return(a-b);});
 c.sort(function(a,b){return(a-b);});
+for(var k=0;k<5;k++)
+{
+  alert("based on total:"+p[k]);}
+ for(var k=0;k<5;k++)
+{
+  alert("based on average:"+c[k]);}
+ for(var k=0;k<5;k++)
+{
+  alert("based on names:"+names[k]);}
 for(var k=0;k<5;k++)
 {
   alert("sum:"+p[k]+" avg:"+c[k]+" name is:"+names[k]);}
