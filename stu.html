@@ -11,19 +11,22 @@ var stu5=new Student("ramya");
 var names=new Array(5);
 var p=new Array(5);
 var c=new Array(5);
+var stu=[tu1,stu2,stu3,stu4,stu5];
 function Student(name)
        {
         this.name=name;
-        var subj=new Array(Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100));
-        names.push(name);
-        var sum=0;
+        var subj=new Array(Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100));}
+    for(var i=0;i<stu.length;i++)
+    {
+       var sum=0;
             for(var j=0;j<3;j++)
             {
-                  sum=sum+subj[j];
+                  sum=sum+stu[i].subj[j];
                   p.push(sum);
             }
            var avg=sum/3;
            c.push(avg);
+           names.push(stu[i].name);
            }
 names.sort(function(a,b){return(a-b);});
 p.sort(function(a,b){return(a-b);}).reverse();
