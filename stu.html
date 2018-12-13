@@ -28,9 +28,12 @@ function Student(name)
            c.push(avg);
            names.push(stu[i].name);
            }
-names.sort.reverse(function(a,b){return(a-b);});
-p.sort.reverse(function(a,b){return(a-b);});
-c.sort.reverse(function(a,b){return(a-b);});
+names.sort(function(a,b){return(a-b);});
+p.sort(function(a,b){return(a-b);});
+c.sort(function(a,b){return(a-b);});
+for(var k=0;k<5;k++)
+{
+  alert("sum:"+p[k]+" avg:"+c[k]+"name is:"+names[k]);}
 </script>
 <body>
 </body>
