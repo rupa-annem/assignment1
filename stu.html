@@ -1,49 +1,63 @@
 <html>
-<head>
-    <title>details</title>
-</head>
-<script type="text/javaScript">
-var stu1=new Student("rupa");
-var stu2=new Student("mani");
-var stu3=new Student("srija");
-var stu4=new Student("akhila");
-var stu5=new Student("ramya");
-var names=new Array(5);
-var p=new Array(5);
-var c=new Array(5);
-var stu=[stu1,stu2,stu3,stu4,stu5];
-function Student(name)
+ <head>
+   <title>student details</title>
+   <script type="text/javascript">
+       var stu1=new student("rupa");
+       var stu2=new student("mani");
+       var stu3=new student("akhila");
+       var stu4=new student("bhavya");
+       var stu5=new student("srija");
+       var stu=[stu1,stu2,stu3,stu4,stu5];
+       function student(name)
        {
-        this.name=name;
-        this.subj=new Array(Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100));}
-    for(var i=0;i<stu.length;i++)
-    {
-       var sum=0;
-            for(var j=0;j<3;j++)
-            {
-                  sum=sum+stu[i].subj[j];
-                  p.push(sum);
-            }
-           var avg=sum/3;
-           c.push(avg);
-           names.push(stu[i].name);
+           this.name=name;
+           this.subj=new Array(Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100));
+       }
+       for(var i=0;i<stu.length;i++)
+       {
+           sum=0;
+           for(var j=0;j<3;j++)
+           {
+               stu[i].sum=sum+stu[i].subj[j];
            }
-names.sort();
-p.sort(function(a,b){return(a-b);});
-c.sort(function(a,b){return(a-b);});
-for(var k=0;k<5;k++)
-{
-  alert("based on total:"+p[k]);}
- for(var k=0;k<5;k++)
-{
-  alert("based on average:"+c[k]);}
- for(var k=0;k<5;k++)
-{
-  alert("based on names:"+names[k]);}
-for(var k=0;k<5;k++)
-{
-  alert("sum:"+p[k]+" avg:"+c[k]+" name is:"+names[k]);}
-</script>
-<body>
-</body>
+           stu[i].avg=stu[i].sum/3;
+       }
+       for(var k=0;k<stu.length;k++)
+       {
+         
+         document.write(stu[k].name+"   "+stu[k].sum+"   "+stu[k].avg);
+         document.writeln("<br>");
+       }
+      document.writeln("BASED ON TOTAL:");
+      document.writeln("<br>");
+      stu.sort(function(a,b){return b.sum-a.sum});
+       for(var i=0;i<stu.length;i++)
+       {
+         document.writeln(stu[i].name+"   "+stu[i].sum+"<br>");
+      }
+      document.writeln("BASED ON AVERAGES:");
+      document.writeln("<br>");
+     stu.sort(function(a,b){return b.avg-a.avg});
+       for(var k=0;k<stu.length;k++)
+       {
+         
+         document.writeln(stu[k].name+"   "+stu[k].avg+"<br>");
+      }
+     stu.sort(function(a, b){
+                if(a.name < b.name) 
+                return -1 
+                else
+                return 1
+                })
+      document.writeln("BASED ON NAMES:");
+      document.writeln("<br>");
+     for(var k=0;k<stu.length;k++)
+       {
+         
+         document.writeln(stu[k].name+"   "+stu[k].avg+"   "+stu[k].sum);
+         document.writeln("<br>");
+      }
+   </script>
+   </head>
+   </body>
 </html>
